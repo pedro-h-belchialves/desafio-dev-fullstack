@@ -1,0 +1,9 @@
+services:
+  api:
+    build: .
+    container_name: energy-simulation-api
+    ports:
+      - "5500:5500"
+    env_file:
+      - .env
+    restart: always

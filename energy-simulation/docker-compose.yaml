@@ -15,7 +15,7 @@ services:
 
   api:
     build:
-      context: ./energy-simulation-api
+      context: ./api
     container_name: api
     ports:
       - "5500:5500"
@@ -30,7 +30,7 @@ services:
 
   web:
     build:
-      context: ./energy-simulation-web
+      context: ./web
     container_name: web
     ports:
       - "3000:3000"

@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+
+  /* BASE */
+  --color-background-from: #f8fafc;
+  --color-background-to: #f1f5f9;
+  --color-foreground: #1a202c;
+  --color-foreground-secondary: #90a1b9;
+
+  /* SURFACE */
+  --color-surface: #ffffff;
+  --color-surface-foreground: #1a202c;
+
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #64748b;
+
+  /* PRIMARY */
+  --color-primary: #e48227;
+  --color-primary-foreground: #EA580C;
+
+  /* SECONDARY */
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #1a202c;
+
+  /* STATES */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-info: #0ea5e9;
+
+  /* BORDER */
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+}
+
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body::selection {
+    background-color: rgb(14 116 144 / 0.2);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    backdrop-filter: blur(12px);
+    background-color: rgb(255 255 255 / 0.8);
+    border-bottom: 1px solid rgb(255 255 255 / 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition: all 300ms;
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+  }
+
+  .container-width {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-width {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-width {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
